@@ -1,6 +1,17 @@
 # Compile Stage
 
 **Phase 1 / public-channel / security-deferred boundary:** this is a public architecture document. It does not authorize ingestion of private or restricted channels, and security enforcement is deferred to a future phase.
+
+Compile is the publication boundary: it deterministically turns landed evidence into atomic
+`ContextClaim` and `EdgeClaim` objects and publishes them into a versioned Enterprise Context
+Graph. Claims retain supporting and contradicting evidence, provenance, valid/transaction time,
+authority and contradiction state, object version, and supersession links. Derived Topics,
+DecisionCases, indexes and weights may be rebuilt from those canonical objects.
+
+Compile does not write a durable ContextPackage, rank or budget retrieval, enforce authorization,
+or assert operational facts owned by a system of record. It emits a routing pointer for those
+facts. Serve creates the temporary request-scoped ContextPackage and durable
+ContextDeliveryReceipt.
 # Enterprise Context Store — Compile Stage: Gate 1 Final Design
 
 **implementation: none**  

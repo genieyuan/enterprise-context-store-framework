@@ -1,6 +1,8 @@
 # Enterprise Context Store Framework
 
-The Enterprise Context Store (ECS) Framework is a technology-agnostic architecture for capturing, preserving, and compiling organizational context for AI agents.
+The Enterprise Context Store (ECS) Framework is a technology-agnostic architecture for capturing
+evidence, compiling atomic claims into a versioned Enterprise Context Graph, and serving
+request-scoped context packages to AI agents.
 
 > **Maturity:** Phase 1 framework and design documentation. This repository is not a production runtime.
 

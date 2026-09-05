@@ -1,6 +1,12 @@
 # ECS Lifecycle
 
 **Phase 1 / public-channel / security-deferred boundary:** this is a public architecture document. It does not authorize ingestion of private or restricted channels, and security enforcement is deferred to a future phase.
+
+The canonical lifecycle is **Capture → Compile → Serve → Continuous Learning**, with
+**Governance & Trust** cross-cutting. Capture lands source-faithful evidence; Compile publishes
+atomic claims and relations into the versioned Enterprise Context Graph; Serve assembles a
+temporary authorized ContextPackage and receipt for each request; feedback returns to Capture
+and Continuous Learning. Governance records policy and authority boundaries across all stages.
 # Enterprise Context Store lifecycle blueprint — Gate 1 final
 
 **implementation: none**  

@@ -7,7 +7,18 @@
 
 ## Flow
 
-`EvidenceEvent → ContextClaim / EdgeClaim (canonical truth-bearing spine) → Topic / DecisionCase / semantic projections → ContextPackage → ContextDeliveryReceipt`
+`EvidenceEvent → Compile → versioned Enterprise Context Graph (ContextClaim + EdgeClaim) → Serve → request-scoped ContextPackage → ContextDeliveryReceipt → Continuous Learning`
+
+Compile publishes atomic, evidence-backed `ContextClaim` and `EdgeClaim` objects into an
+append-only, versioned Enterprise Context Graph (ECG). Every semantic relationship resolves
+to an EdgeClaim; Topic and DecisionCase are derived projections, never the truth spine.
+Serve alone assembles a temporary, task-scoped ContextPackage from pinned graph/object,
+evidence, policy and derivation versions. Packages are not durable graph objects.
+
+Atomic claims carry evidence/provenance, valid-time and transaction-time intervals, authority
+state, contradiction links/state, object version and supersession lineage. The receipt records
+authorization, budget, omissions, and all pinned versions. Systems-of-record facts remain
+routing references, not copied values.
 
 The raw ledger preserves evidence and append-only provenance/correction history, subject to
 authorized retention, deletion, access-control, and privacy policy. Normalization produces

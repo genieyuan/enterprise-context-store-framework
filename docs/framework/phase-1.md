@@ -4,6 +4,11 @@ This document defines the normative, technology-agnostic Phase 1 framework. It i
 
 # Enterprise Context Store — Phase 1 Framework
 
+**Boundary contract:** Capture lands evidence; Compile publishes atomic `ContextClaim` and
+`EdgeClaim` objects into the versioned Enterprise Context Graph; Serve assembles temporary,
+request-scoped `ContextPackage` objects and durable delivery receipts. Governance & Trust is
+cross-cutting. No durable ContextPackage is written by Compile.
+
 - **Version:** doc-v4 — positions the store as the interpretive layer over systems of record
   (§3.0), and specifies retrieval as an agent-native contract (§3.3). doc-v3 described the
   store as if it were the agent's only source, and described serving as if a human read it

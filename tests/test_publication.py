@@ -1,6 +1,7 @@
 from pathlib import Path
 import tempfile
 import re
+import xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).parents[1]
 
@@ -117,3 +118,47 @@ def test_cover_page_is_public_and_cc_by_licensed():
 def test_exact_public_manifest_has_no_private_artifact():
  forbidden={'evidence/done-checklist.md'}
  assert forbidden.isdisjoint({str(p.relative_to(ROOT)) for p in _publishable_files()})
+
+def test_compile_serve_boundary_contract():
+    corpus = '\n'.join((ROOT/p).read_text() for p in [
+        'README.md', 'docs/reference-architecture.md', 'docs/framework/phase-1.md',
+        'docs/framework/compile.md', 'docs/framework/lifecycle.md',
+        'docs/adr/0016-compile-publishes-ecg-serve-assembles-packages.md'])
+    assert 'Compile' in corpus and 'versioned Enterprise Context Graph' in corpus
+    assert 'ContextClaim' in corpus and 'EdgeClaim' in corpus
+    assert 'temporary' in corpus and 'request-scoped' in corpus
+    assert 'ContextDeliveryReceipt' in corpus
+    assert 'Every semantic relationship is backed by an EdgeClaim' in corpus
+    assert 'Compile never owns a durable ContextPackage' in corpus
+
+def test_boundary_adr_is_indexed_once():
+    decisions = (ROOT/'docs/decisions.md').read_text()
+    assert decisions.count('0016-compile-publishes-ecg-serve-assembles-packages.md') == 1
+
+def test_atomic_claim_contract_is_explicit():
+    text = (ROOT/'docs/adr/0016-compile-publishes-ecg-serve-assembles-packages.md').read_text()
+    for term in ['evidence-backed', 'versioned', 'provenance', 'valid-time', 'transaction-time',
+                 'authority', 'contradiction', 'supersession']:
+        assert term in text
+
+def test_reference_architecture_svg_has_render_safe_geometry():
+    svg = ROOT/'docs/assets/reference-architecture.svg'
+    root = ET.parse(svg).getroot()
+    paths = root.findall('{http://www.w3.org/2000/svg}path')
+    assert paths, 'architecture arrows must be present'
+    # Every connector must be an explicit stroke with no fill; this prevents
+    # Quick Look/SVG viewers from interpreting an open feedback route as a block.
+    styles = root.find('{http://www.w3.org/2000/svg}style').text or ''
+    assert '.arrow{fill:none' in styles
+    assert '.feedback{fill:none' in styles
+    assert 'stroke-width:3' in styles
+    assert not any(path.get('fill') not in (None, 'none') for path in paths)
+    # Callouts sit well above the stage boxes and the trust band is below the
+    # feedback label, leaving deterministic non-overlap in the viewBox.
+    texts = root.findall('{http://www.w3.org/2000/svg}text')
+    ys = [float(t.get('y')) for t in texts if t.get('y')]
+    assert max(y for y in ys if y < 150) < 150
+    assert min(y for y in ys if y > 400) >= 445
+    trust = next(r for r in root.findall('{http://www.w3.org/2000/svg}rect')
+                 if 'trust' in (r.get('class') or ''))
+    assert float(trust.get('x')) == 40 and float(trust.get('width')) == 1200
