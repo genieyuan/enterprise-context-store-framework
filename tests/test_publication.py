@@ -56,6 +56,16 @@ def test_phase_one_uses_compile_not_store_as_a_lifecycle_stage():
  assert 'The three stages inside the store' not in phase
  assert not re.search(r'Capture\s*→\s*Store\s*→\s*Serve', phase, re.I)
 
+def test_publication_docs_do_not_reintroduce_stale_storage_lifecycle_wording():
+    stale = re.compile(r'from capture,?\s+through storage,?\s+to consumption', re.I)
+    offenders = []
+    for path in _publishable_files():
+        if path.suffix.lower() not in {'.md', '.rst', '.txt'}:
+            continue
+        if stale.search(path.read_text(errors='ignore')):
+            offenders.append(str(path.relative_to(ROOT)))
+    assert offenders == []
+
 def test_phase_one_lifecycle_has_four_first_class_stages_and_cross_cutting_trust():
  phase=(ROOT/'docs/framework/phase-1.md').read_text()
  diagram=phase.split('### The lifecycle stages inside the store', 1)[1].split('### 3.1 Capture', 1)[0]

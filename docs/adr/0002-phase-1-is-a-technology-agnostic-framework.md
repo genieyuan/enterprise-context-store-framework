@@ -29,7 +29,8 @@ The phase 1 framework must describe the system **without naming any product, ven
 database, protocol, or library.**
 
 **Definition of done:** the framework can describe end to end how one internal signal and one
-external signal travel from capture, through storage, to consumption by an agent — including
+external signal move through **Capture → Compile → Serve → Continuous Learning**, with
+**Governance & Trust** applying across the lifecycle, to consumption by an agent — including
 how weight and score are assigned — without naming a product. If it cannot survive that
 walkthrough, it is not finished. Phase 2 does not begin before it is met.
 
