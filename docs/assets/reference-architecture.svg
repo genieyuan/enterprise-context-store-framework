@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 520" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 650" role="img" aria-labelledby="title desc">
   <title id="title">ECS Compile and Serve reference architecture</title>
   <desc id="desc">Capture lands evidence, Compile publishes atomic claims into a versioned Enterprise Context Graph, Serve assembles a temporary Context Package and receipt, and Continuous Learning feeds governed feedback back to Capture.</desc>
-  <style>text{font:20px sans-serif;fill:#102a43} .box{fill:#e8f1f8;stroke:#1769aa;stroke-width:3} .trust{fill:#fff4d6;stroke:#b7791f;stroke-width:3} .arrow{stroke:#334e68;stroke-width:3;marker-end:url(#a)} .dash{stroke:#b7791f;stroke-width:3;stroke-dasharray:10 8}</style>
+  <style>text{font:20px sans-serif;fill:#102a43} .box{fill:#e8f1f8;stroke:#1769aa;stroke-width:3} .trust{fill:#fff4d6;stroke:#b7791f;stroke-width:3} .arrow{fill:none;stroke:#334e68;stroke-width:3;marker-end:url(#a)} .feedback{fill:none;stroke:#7b341e;stroke-width:3;stroke-dasharray:10 8;marker-end:url(#a)} .callout{font-size:18px}</style>
   <defs><marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 12,6 0,12z" fill="#334e68"/></marker></defs>
+  <text class="callout" x="455" y="82" text-anchor="middle">durable, versioned ECG</text><text class="callout" x="455" y="108" text-anchor="middle">ContextClaim + EdgeClaim</text>
+  <text class="callout" x="775" y="82" text-anchor="middle">temporary, authorized</text><text class="callout" x="775" y="108" text-anchor="middle">request-scoped ContextPackage</text>
   <rect class="box" x="40" y="190" width="220" height="100" rx="12"/><text x="150" y="235" text-anchor="middle">1. CAPTURE</text><text x="150" y="265" text-anchor="middle">EvidenceEvent</text>
   <rect class="box" x="330" y="190" width="250" height="100" rx="12"/><text x="455" y="235" text-anchor="middle">2. COMPILE</text><text x="455" y="265" text-anchor="middle">claims → ECG</text>
   <rect class="box" x="650" y="190" width="250" height="100" rx="12"/><text x="775" y="235" text-anchor="middle">3. SERVE</text><text x="775" y="265" text-anchor="middle">ContextPackage</text>
   <rect class="box" x="970" y="190" width="270" height="100" rx="12"/><text x="1105" y="235" text-anchor="middle">4. CONTINUOUS</text><text x="1105" y="265" text-anchor="middle">LEARNING + receipt</text>
-  <path class="arrow" d="M260 240h70M580 240h70M900 240h70"/><path class="arrow" d="M1105 290v100H150v-100"/>
-  <rect class="trust" x="180" y="390" width="1020" height="75" rx="12"/><text x="690" y="435" text-anchor="middle">Governance &amp; Trust — cross-cutting: authority, policy, privacy, retention</text>
-  <text x="455" y="150" text-anchor="middle">durable/versioned ECG: ContextClaim + EdgeClaim</text><text x="775" y="150" text-anchor="middle">temporary, authorized, request-scoped package</text>
+  <path class="arrow" d="M260 240h70M580 240h70M900 240h70"/>
+  <path class="feedback" d="M1105 290v120H150V290"/>
+  <text class="callout" x="690" y="445" text-anchor="middle">governed feedback loop</text>
+  <rect class="trust" x="40" y="500" width="1200" height="78" rx="12"/><text x="640" y="547" text-anchor="middle">Governance &amp; Trust — spans Capture, Compile, Serve and Continuous Learning</text>
 </svg>

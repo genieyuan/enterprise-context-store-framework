@@ -1,6 +1,7 @@
 from pathlib import Path
 import tempfile
 import re
+import xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).parents[1]
 
@@ -139,3 +140,25 @@ def test_atomic_claim_contract_is_explicit():
     for term in ['evidence-backed', 'versioned', 'provenance', 'valid-time', 'transaction-time',
                  'authority', 'contradiction', 'supersession']:
         assert term in text
+
+def test_reference_architecture_svg_has_render_safe_geometry():
+    svg = ROOT/'docs/assets/reference-architecture.svg'
+    root = ET.parse(svg).getroot()
+    paths = root.findall('{http://www.w3.org/2000/svg}path')
+    assert paths, 'architecture arrows must be present'
+    # Every connector must be an explicit stroke with no fill; this prevents
+    # Quick Look/SVG viewers from interpreting an open feedback route as a block.
+    styles = root.find('{http://www.w3.org/2000/svg}style').text or ''
+    assert '.arrow{fill:none' in styles
+    assert '.feedback{fill:none' in styles
+    assert 'stroke-width:3' in styles
+    assert not any(path.get('fill') not in (None, 'none') for path in paths)
+    # Callouts sit well above the stage boxes and the trust band is below the
+    # feedback label, leaving deterministic non-overlap in the viewBox.
+    texts = root.findall('{http://www.w3.org/2000/svg}text')
+    ys = [float(t.get('y')) for t in texts if t.get('y')]
+    assert max(y for y in ys if y < 150) < 150
+    assert min(y for y in ys if y > 400) >= 445
+    trust = next(r for r in root.findall('{http://www.w3.org/2000/svg}rect')
+                 if 'trust' in (r.get('class') or ''))
+    assert float(trust.get('x')) == 40 and float(trust.get('width')) == 1200
