@@ -38,7 +38,7 @@ def test_private_marker_in_publishable_content_fails():
   assert _private_markers(root) == ['private-network-marker']
 
 def test_required_docs():
- for p in ['README.md','docs/framework/phase-1.md','docs/framework/lifecycle.md','docs/framework/capture.md','docs/framework/compile.md','docs/reference-architecture.md','docs/falsification-criteria.md','docs/decisions.md','docs/roadmap.md','LICENSE','LICENSE-DOCS','LICENSE-CODE','SECURITY.md']:
+ for p in ['README.md','docs/framework/cover-page.md','docs/framework/phase-1.md','docs/framework/lifecycle.md','docs/framework/capture.md','docs/framework/compile.md','docs/reference-architecture.md','docs/falsification-criteria.md','docs/decisions.md','docs/roadmap.md','LICENSE','LICENSE-DOCS','LICENSE-CODE','SECURITY.md']:
   assert (ROOT/p).exists(), p
 
 def test_public_lifecycle_is_canonical_and_has_no_preserve_stage():
@@ -55,3 +55,22 @@ def test_phase_one_uses_compile_not_store_as_a_lifecycle_stage():
  assert '### 3.2 Compile' in phase
  assert 'The three stages inside the store' not in phase
  assert not re.search(r'Capture\s*→\s*Store\s*→\s*Serve', phase, re.I)
+
+def test_public_navigation_and_lifecycle_terms():
+ readme=(ROOT/'README.md').read_text()
+ assert '[Framework cover page](docs/framework/cover-page.md)' in readme
+ for name in ['phase-1.md','lifecycle.md','capture.md','compile.md','../reference-architecture.md']:
+  text=(ROOT/'docs/framework'/name).read_text()
+  assert 'Capture → Compile → Serve → Continuous Learning' in text
+  assert 'Governance & Trust' in text
+
+def test_cover_page_is_public_and_cc_by_licensed():
+ cover=(ROOT/'docs/framework/cover-page.md').read_text()
+ assert not cover.startswith('---')
+ assert 'CC BY 4.0' in cover
+ assert 'vault' not in cover.lower()
+ assert '/Users/' not in cover
+
+def test_exact_public_manifest_has_no_private_artifact():
+ forbidden={'evidence/done-checklist.md'}
+ assert forbidden.isdisjoint({str(p.relative_to(ROOT)) for p in _publishable_files()})

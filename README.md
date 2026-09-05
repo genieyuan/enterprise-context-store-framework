@@ -6,6 +6,7 @@ The Enterprise Context Store (ECS) Framework is a technology-agnostic architectu
 
 ## Start here
 
+- [Framework cover page](docs/framework/cover-page.md)
 - [Phase 1 framework](docs/framework/phase-1.md)
 - [Lifecycle](docs/framework/lifecycle.md)
 - [Capture](docs/framework/capture.md)

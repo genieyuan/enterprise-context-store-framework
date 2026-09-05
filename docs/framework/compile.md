@@ -702,4 +702,3 @@ Every open item is classified as: **(a)** blocking owner decision before Gate 1 
 - **Non-blocking editorial (page-one author).** Closed. The `Author: Bob` line is removed; page one attributes generation to the Claude Code A2A bridge recovery run `ecs-compile-stage-recovery-20260903`, route/owner friday, and reiterates that "Bob" is transport metadata.
 
 ---
-

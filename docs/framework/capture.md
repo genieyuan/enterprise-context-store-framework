@@ -5,6 +5,7 @@
 
 **implementation: none**  
 **Lifecycle stage:** Capture  
+**Canonical lifecycle:** Capture → Compile → Serve → Continuous Learning, with **Governance & Trust** cross-cutting.
 
 
 ## 1. Definition
