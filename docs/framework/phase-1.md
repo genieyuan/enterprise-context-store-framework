@@ -67,8 +67,10 @@ vendor, model, database, or protocol**. See
 ### Definition of done
 
 The framework is complete when it can describe, end to end, how **one internal signal** and
-**one external signal** travel from capture, through storage, to consumption by an agent —
-including how weight and score are assigned along the way — **without naming a product.**
+**one external signal** move through **Capture → Compile → Serve** to consumption by an agent,
+and how the resulting assumptions, corrections, decisions and outcomes feed **Continuous
+Learning** — including how weight and score are assigned along the way — **without naming a
+product.**
 
 If it cannot survive that walkthrough, it is not yet a framework. This is the exit
 condition; phase 2 does not begin before it is met.
@@ -129,23 +131,24 @@ Neither layer could produce that answer alone, and neither had to overrule the o
 ### The lifecycle stages inside the store
 
 The canonical lifecycle is **Capture → Compile → Serve → Continuous Learning**, with
-Governance & Trust cross-cutting. The store is the system being built; Compile is its
-interpretive stage, not a separate storage stage.
+**Governance & Trust** cross-cutting all four stages. The store is the system being built;
+Compile is its interpretive stage, not a separate storage stage.
 
 ```
-   CAPTURE                  COMPILE                    SERVE
-   ────────                 ───────                    ─────
-   internal signals  ──┐                          ┌──▶ agent sends task
-   (work happening)    │    ┌──────────────┐      │    + token budget
-                       ├───▶│  raw, as-is  │──────┤
-   external signals  ──┘    │  + derived   │      └──▶ found  + NOT-found
-   (customer voice)         │    layers    │           + provenance
-                            └──────┬───────┘           + staleness
-                                   │
-                            ┌──────▼───────┐
-                            │ recurring    │  reweights by reuse/recall
-                            │ self-learn   │  tags valuable assets
-                            └──────────────┘  consumes corrected assumptions
+┌────────────────┐   ┌────────────────┐   ┌────────────────┐   ┌──────────────────────────┐
+│ 1. CAPTURE     │──▶│ 2. COMPILE     │──▶│ 3. SERVE       │──▶│ 4. CONTINUOUS LEARNING  │
+│                │   │                │   │                │   │                         │
+│ internal and   │   │ raw + derived  │   │ task-ready     │   │ corrections,          │
+│ external       │   │ context with   │   │ context to an  │   │ assumptions,          │
+│ signals,       │   │ evidence,     │   │ agent with     │   │ decisions and         │
+│ complete and   │   │ relationships, │   │ provenance,    │   │ outcomes improve      │
+│ traceable      │   │ uncertainty    │   │ gaps and       │   │ future context under  │
+│                │   │ and history    │   │ freshness      │   │ controlled promotion  │
+└────────────────┘   └────────────────┘   └────────────────┘   └──────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────────────┐
+│ GOVERNANCE & TRUST — cross-cutting across Capture, Compile, Serve and Continuous      │
+│ Learning                                                                               │
+└──────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ### 3.1 Capture
@@ -311,6 +314,25 @@ measurement loop cannot.
 
 Ordering within the returned set uses three inputs, not one: **vector relevance × collapsed
 value score** (§5, weighted to the consuming agent's frame) **× freshness**.
+
+### 3.4 Continuous Learning
+
+**Continuous Learning is a first-class lifecycle stage, not a subordinate Compile operation.**
+It receives attributable evidence from agent use: declared assumptions, human corrections,
+decisions and real-world outcomes. It evaluates that evidence and promotes only controlled,
+validated improvements to future context and scoring. A single response does not autonomously
+rewrite the framework or establish enterprise truth.
+
+The learning stage closes the lifecycle loop: its approved improvements feed the next Compile
+and Serve cycle, while its evaluation evidence remains available for review and replay. The
+detailed learning loop and its boundaries are defined in [§5](#5-the-learning-loop).
+
+### 3.5 Governance & Trust — cross-cutting plane
+
+**Governance & Trust is not a fifth lifecycle stage.** It constrains and records every stage:
+provenance, permissions, privacy, retention, authority, temporal validity, auditability and
+action boundaries apply to Capture, Compile, Serve and Continuous Learning. The plane also
+governs controlled promotion and prevents context from authorizing business action.
 
 ## 4. Trigger design
 

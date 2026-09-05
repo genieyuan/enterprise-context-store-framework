@@ -10,6 +10,12 @@
 
 ## Approved design
 
+The lifecycle is **Capture → Compile → Serve → Continuous Learning**, with **Governance & Trust**
+as a cross-cutting plane. Preservation, landing, change tracking, and expiry are distributed
+responsibilities: Capture lands complete source records and their changes; Compile maintains
+derived context and evidence lineage; Governance & Trust defines retention, withdrawal, expiry,
+and access boundaries. **Preserve is not an independent lifecycle stage.**
+
 
 `f5db96a53abd562fe960252d31635b41c20a863a3dc7e171d610d2b7fa336855`
 

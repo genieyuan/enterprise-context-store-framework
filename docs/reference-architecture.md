@@ -1,11 +1,9 @@
-# ECS Reference Architecture
-
 # Enterprise Context Store — reference architecture
 
 > This is a technology-agnostic reference architecture. It names no vendor,
 > database, model, or cloud. Inclusion of research sources is not endorsement.
 
-![Enterprise Context Store reference architecture](assets/enterprise-context-store-reference-architecture.svg)
+![Enterprise Context Store reference architecture](assets/reference-architecture.svg)
 
 ## Flow
 
@@ -37,3 +35,9 @@ also candidates, not accepted architecture. The system captures observable evide
 privacy, human validation, and observability. Instance IDs remain references to authoritative
 systems; source identity preservation and schema/type binding do not become MDM or cross-source
 instance mastering.
+
+# Lifecycle
+
+The architecture follows **Capture → Compile → Serve → Continuous Learning**, with
+**Governance & Trust** cross-cutting. The Context Store is the compiled product consumed at
+the Serve boundary; it is not a separate lifecycle stage.
