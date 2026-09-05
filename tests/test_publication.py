@@ -51,10 +51,43 @@ def test_public_lifecycle_is_canonical_and_has_no_preserve_stage():
 def test_phase_one_uses_compile_not_store_as_a_lifecycle_stage():
  phase=(ROOT/'docs/framework/phase-1.md').read_text()
  assert 'Capture → Compile → Serve → Continuous Learning' in phase
- assert re.search(r'CAPTURE\s+COMPILE\s+SERVE', phase)
+ assert all(stage in phase for stage in ['1. CAPTURE', '2. COMPILE', '3. SERVE', '4. CONTINUOUS LEARNING'])
  assert '### 3.2 Compile' in phase
  assert 'The three stages inside the store' not in phase
  assert not re.search(r'Capture\s*→\s*Store\s*→\s*Serve', phase, re.I)
+
+def test_phase_one_lifecycle_has_four_first_class_stages_and_cross_cutting_trust():
+ phase=(ROOT/'docs/framework/phase-1.md').read_text()
+ diagram=phase.split('### The lifecycle stages inside the store', 1)[1].split('### 3.1 Capture', 1)[0]
+ assert re.search(r'1\. CAPTURE\s+│──▶│ 2\. COMPILE\s+│──▶│ 3\. SERVE\s+│──▶│ 4\. CONTINUOUS LEARNING', diagram)
+ assert '### 3.4 Continuous Learning' in phase
+ assert 'Continuous Learning is a first-class lifecycle stage' in phase
+ assert re.search(r'Governance & Trust — cross-cutting across Capture, Compile, Serve and Continuous.*Learning', diagram, re.I | re.S)
+ assert 'Governance & Trust is not a fifth lifecycle stage' in phase
+ assert 'through storage' not in phase.lower()
+
+def test_public_cover_preserves_approved_framework_content():
+ cover=(ROOT/'docs/framework/cover-page.md').read_text()
+ required_sections=[
+  '## The problem ECS addresses',
+  '## What the ECS framework does',
+  '## Why ECS matters',
+  '## How an enterprise can leverage ECS',
+  '## Who should apply the framework',
+  '## When ECS is most relevant',
+  '## How success should be measured',
+  '## Current maturity and scope',
+  '## Closing statement',
+ ]
+ for section in required_sections:
+  assert section in cover
+ assert 'AI-native SaaS reduces context gaps inside each application.' in cover
+ assert 'ECS should be adopted as a framework' in cover
+ assert 'AI agents are the consumers of the context ECS serves.' in cover
+ assert 'unsupported assumptions per AI task' in cover
+ assert 'technology-agnostic, pre-product framework' in cover
+ assert 'The first generation of enterprise AI connected models to data.' in cover
+ assert '[CC BY 4.0](../../LICENSE-DOCS)' in cover
 
 def test_public_navigation_and_lifecycle_terms():
  readme=(ROOT/'README.md').read_text()
