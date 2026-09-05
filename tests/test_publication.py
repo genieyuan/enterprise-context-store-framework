@@ -1,5 +1,6 @@
 from pathlib import Path
 import tempfile
+import re
 
 ROOT=Path(__file__).parents[1]
 
@@ -39,3 +40,18 @@ def test_private_marker_in_publishable_content_fails():
 def test_required_docs():
  for p in ['README.md','docs/framework/phase-1.md','docs/framework/lifecycle.md','docs/framework/capture.md','docs/framework/compile.md','docs/reference-architecture.md','docs/falsification-criteria.md','docs/decisions.md','docs/roadmap.md','LICENSE','LICENSE-DOCS','LICENSE-CODE','SECURITY.md']:
   assert (ROOT/p).exists(), p
+
+def test_public_lifecycle_is_canonical_and_has_no_preserve_stage():
+ lifecycle=(ROOT/'docs/framework/lifecycle.md').read_text()
+ canonical='Capture → Compile → Serve → Continuous Learning'
+ assert canonical in lifecycle
+ assert not re.search(r'Capture\s*→\s*Preserve\s*→', lifecycle)
+ assert 'five lifecycle stages' not in lifecycle
+
+def test_phase_one_uses_compile_not_store_as_a_lifecycle_stage():
+ phase=(ROOT/'docs/framework/phase-1.md').read_text()
+ assert 'Capture → Compile → Serve → Continuous Learning' in phase
+ assert re.search(r'CAPTURE\s+COMPILE\s+SERVE', phase)
+ assert '### 3.2 Compile' in phase
+ assert 'The three stages inside the store' not in phase
+ assert not re.search(r'Capture\s*→\s*Store\s*→\s*Serve', phase, re.I)

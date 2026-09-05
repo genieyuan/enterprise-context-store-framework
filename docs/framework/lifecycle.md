@@ -5,7 +5,7 @@
 
 **implementation: none**  
 **Gate 1 status:** approved and closed, Round 1  
-**Canonical lifecycle for this blueprint:** Capture → Preserve → Compile → Serve → Continuous Learning  
+**Canonical lifecycle for this blueprint:** Capture → Compile → Serve → Continuous Learning
 **Cross-cutting plane:** Governance & Trust
 
 ## Approved design
@@ -18,10 +18,9 @@ This final record closes Gate 1. Because the work is documentary and `implementa
 
 ## Approved coverage
 
-- Consistent build/run/scale blueprint for all five lifecycle stages.
+- Consistent build/run/scale blueprint for all four lifecycle stages.
 - Deeper architecture decisions for Compile and Continuous Learning.
 - End-to-end internal/external flows with explicit feedback, replay and rollback.
 - Single-owner canonical component map with candidate/open boundaries.
 - Cross-cutting Governance & Trust controls and credible framework alignment.
 - Explicit contradictions and open decisions covering repo location/lineage, terminology, consumer boundary, security scope and proactive learning.
-

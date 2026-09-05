@@ -126,11 +126,15 @@ the same thing.
 
 Neither layer could produce that answer alone, and neither had to overrule the other.
 
-### The three stages inside the store
+### The lifecycle stages inside the store
+
+The canonical lifecycle is **Capture → Compile → Serve → Continuous Learning**, with
+Governance & Trust cross-cutting. The store is the system being built; Compile is its
+interpretive stage, not a separate storage stage.
 
 ```
-   CAPTURE                  STORE                      SERVE
-   ────────                 ─────                      ─────
+   CAPTURE                  COMPILE                    SERVE
+   ────────                 ───────                    ─────
    internal signals  ──┐                          ┌──▶ agent sends task
    (work happening)    │    ┌──────────────┐      │    + token budget
                        ├───▶│  raw, as-is  │──────┤
@@ -164,7 +168,7 @@ labelled as external — clearly and structurally, not by convention.
 
 **Nothing is privileged at capture.** No preference, no weighting. Everything arrives flat.
 
-### 3.2 Store
+### 3.2 Compile
 
 **The store is a context graph whose nodes are topics, not a pile of documents.**
 
