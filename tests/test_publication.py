@@ -117,3 +117,25 @@ def test_cover_page_is_public_and_cc_by_licensed():
 def test_exact_public_manifest_has_no_private_artifact():
  forbidden={'evidence/done-checklist.md'}
  assert forbidden.isdisjoint({str(p.relative_to(ROOT)) for p in _publishable_files()})
+
+def test_compile_serve_boundary_contract():
+    corpus = '\n'.join((ROOT/p).read_text() for p in [
+        'README.md', 'docs/reference-architecture.md', 'docs/framework/phase-1.md',
+        'docs/framework/compile.md', 'docs/framework/lifecycle.md',
+        'docs/adr/0016-compile-publishes-ecg-serve-assembles-packages.md'])
+    assert 'Compile' in corpus and 'versioned Enterprise Context Graph' in corpus
+    assert 'ContextClaim' in corpus and 'EdgeClaim' in corpus
+    assert 'temporary' in corpus and 'request-scoped' in corpus
+    assert 'ContextDeliveryReceipt' in corpus
+    assert 'Every semantic relationship is backed by an EdgeClaim' in corpus
+    assert 'Compile never owns a durable ContextPackage' in corpus
+
+def test_boundary_adr_is_indexed_once():
+    decisions = (ROOT/'docs/decisions.md').read_text()
+    assert decisions.count('0016-compile-publishes-ecg-serve-assembles-packages.md') == 1
+
+def test_atomic_claim_contract_is_explicit():
+    text = (ROOT/'docs/adr/0016-compile-publishes-ecg-serve-assembles-packages.md').read_text()
+    for term in ['evidence-backed', 'versioned', 'provenance', 'valid-time', 'transaction-time',
+                 'authority', 'contradiction', 'supersession']:
+        assert term in text
