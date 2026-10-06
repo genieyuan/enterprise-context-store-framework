@@ -6,6 +6,9 @@
 > future implementations; they do not claim those mechanisms are implemented or authorize
 > private/restricted ingestion. Existing accepted ADRs are not silently superseded.
 
+The [Compile/Serve boundary](adr/0016-compile-publishes-ecg-serve-assembles-packages.md)
+assigns durable ECG claim publication to Compile and task-package assembly to Serve.
+
 ## Normative semantic spine
 
 This section preserves the approved ECS semantic model. Source observations are represented by

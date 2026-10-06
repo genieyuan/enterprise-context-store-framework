@@ -1,5 +1,11 @@
 # ECS Lifecycle
 
+**Compile/Serve boundary:** Compile publishes atomic `ContextClaim` and `EdgeClaim` objects
+into the versioned Enterprise Context Graph. Serve assembles temporary request-scoped
+`ContextPackage` objects and durable `ContextDeliveryReceipt` records. Compile does not own
+a durable request package. See [ADR-0016](../adr/0016-compile-publishes-ecg-serve-assembles-packages.md).
+
+
 > See the [October compiler direction](../experience-distillation.md) for reusable frameworks
 > and proposed Skills within this unchanged four-stage lifecycle.
 

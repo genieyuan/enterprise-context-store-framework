@@ -82,6 +82,13 @@ facts without manufacturing a capability hypothesis.
 
 ### Context Store — compiled product, not a separate lifecycle stage
 
+Compile publishes atomic claims into a durable, versioned Enterprise Context Graph (ECG).
+Serve alone assembles temporary request-scoped packages and durable delivery receipts;
+Compile never owns a durable ContextPackage. This is the existing
+[ADR-0016 boundary](adr/0016-compile-publishes-ecg-serve-assembles-packages.md), not a new
+publication-time decision. Governed Skill publication is a separate optional branch from
+publication of canonical claims into the ECG.
+
 The semantic flow remains:
 
 `EvidenceEvent → ContextClaim / EdgeClaim → Topic or DecisionCase → ContextPackage + ContextDeliveryReceipt → EvaluationEvent / OutcomeEvent`

@@ -1,5 +1,11 @@
 # ECS Phase 1 Framework
 
+**Compile/Serve boundary:** Compile publishes atomic `ContextClaim` and `EdgeClaim` objects
+into the versioned Enterprise Context Graph. Serve assembles temporary request-scoped
+`ContextPackage` objects and durable `ContextDeliveryReceipt` records. Compile does not own
+a durable request package. See [ADR-0016](../adr/0016-compile-publishes-ecg-serve-assembles-packages.md).
+
+
 This document defines the normative, technology-agnostic Phase 1 framework. It is a design contract, not an implementation or deployment guide.
 
 # Enterprise Context Store — Phase 1 Framework
