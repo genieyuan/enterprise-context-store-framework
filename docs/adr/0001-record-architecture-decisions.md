@@ -26,7 +26,7 @@ We will record every decision that is expensive to reverse as an Architecture De
 Record in `docs/02-design/adr/`, using the format described by Michael Nygard.
 
 - One file per decision, numbered sequentially: `NNNN-short-slug.md`.
-- Copy [`TEMPLATE.md`](TEMPLATE.md) to start.
+- Copy `TEMPLATE.md` (not included in the public edition) to start.
 - The pull request discussion is the decision process; merging is the decision being made.
 - **Merged ADRs are immutable.** To change a decision, write a new ADR that supersedes the
   old one, and edit the old one's status line to point at its replacement.
@@ -72,4 +72,4 @@ reversible decisions.
 ## References
 
 - Michael Nygard, *Documenting Architecture Decisions* (2011) — the original format.
-- [`CONTRIBUTING.md`](../../../CONTRIBUTING.md) — how ADRs fit the PR workflow.
+- [`CONTRIBUTING.md`](../../CONTRIBUTING.md) — how ADRs fit the PR workflow.

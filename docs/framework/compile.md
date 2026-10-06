@@ -1,5 +1,15 @@
 # Compile Stage
 
+> **October 2026 reading update:** see [experience distillation](../experience-distillation.md)
+> and the [refreshed architecture](../reference-architecture.md) for the AI-agent compiler,
+> illustrative knowledge frameworks, and searchable proposed Skills. This document retains
+> its earlier scope; the update is not a runtime release or a silent amendment of accepted ADRs.
+> **Vocabulary reconciliation:** this earlier design uses “Context Package” for durable compiler
+> output. The [semantic contract](../context-object-and-retrieval-contract.md) uses `ContextPackage`
+> for a temporary task-bound delivery and `ContextDeliveryReceipt` for its durable receipt.
+> Do not treat those usages as identical; detailed stage-contract reconciliation remains open.
+
+
 **Phase 1 / public-channel / security-deferred boundary:** this is a public architecture document. It does not authorize ingestion of private or restricted channels, and security enforcement is deferred to a future phase.
 # Enterprise Context Store — Compile Stage: Gate 1 Final Design
 

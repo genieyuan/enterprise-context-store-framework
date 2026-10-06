@@ -8,9 +8,9 @@ This document defines the normative, technology-agnostic Phase 1 framework. It i
   (§3.0), and specifies retrieval as an agent-native contract (§3.3). doc-v3 described the
   store as if it were the agent's only source, and described serving as if a human read it
 - **Date:** 2026-08-17
-  Primary source: [2026-08-12 founding discussion](../01-research/2026-08-12-founding-discussion-context-store.md)
+  Primary source: 2026-08-12 founding discussion (historical source; not included in the public edition)
 
-> Navigation: [reference architecture](reference-architecture.md) · [falsification criteria](falsification-criteria.md) · [annotated research set](../01-research/2026-08-19-context-graph-reference-set.md)
+> Navigation: [reference architecture](../reference-architecture.md) · [falsification criteria](../falsification-criteria.md) · annotated research set (historical source; not included in the public edition)
 
 ## Security tier — read this first
 
@@ -20,7 +20,7 @@ running system. Exposure is zero because nothing is deployed and nothing is inge
 Phase 2 will handle enterprise-internal communications and is expected to be **Tier 2 —
 internal confidential, single-tenant**. Its threat model is deliberately **not** in scope
 here, with one exception carried forward as a hard constraint: see
-[ADR-0006](adr/0006-record-source-acls-without-enforcing.md).
+[ADR-0006](../adr/0006-record-source-acls-without-enforcing.md).
 
 ---
 
@@ -52,7 +52,7 @@ right?"* is a far easier question to put to a domain expert than *"what context 
 have given me?"*
 
 This single move is what makes the rest of the system tractable. See
-[ADR-0003](adr/0003-measure-context-quality-by-declared-assumptions.md).
+[ADR-0003](../adr/0003-measure-context-quality-by-declared-assumptions.md).
 
 ## 2. What phase 1 is
 
@@ -62,7 +62,7 @@ Phase 2 implements it against specific technology — and that technology is exp
 change repeatedly, because the field moves faster than any architecture built on top of it.
 The framework must therefore describe the system **without naming a single product,
 vendor, model, database, or protocol**. See
-[ADR-0002](adr/0002-phase-1-is-a-technology-agnostic-framework.md).
+[ADR-0002](../adr/0002-phase-1-is-a-technology-agnostic-framework.md).
 
 ### Definition of done
 
@@ -80,7 +80,7 @@ condition; phase 2 does not begin before it is met.
 ### 3.0 Where the store sits — three layers
 
 **The context store is not the only place an agent gets information, and it must not behave as
-though it were.** See [ADR-0013](adr/0013-context-store-enriches-systems-of-record.md).
+though it were.** See [ADR-0013](../adr/0013-context-store-enriches-systems-of-record.md).
 
 ```
         ┌──────────────────────────────────────────────────────────┐
@@ -192,12 +192,12 @@ it is also the unit at which humans rate context — see §5.
 
 **Entities are types, not instances** — `customers`, `suppliers`, `pricing`, `onboarding`;
 not customer A and customer B. See
-[ADR-0012](adr/0012-type-level-entities-and-typed-relations.md). Instance identity already has
+[ADR-0012](../adr/0012-type-level-entities-and-typed-relations.md). Instance identity already has
 an owner — the systems of record (§3.0) — so duplicating it would produce a worse copy that
 drifts.
 
 **The entity baseline is bootstrapped from ERP and warehouse schema**, then enriched from
-conversation. See [ADR-0015](adr/0015-bootstrap-entity-graph-from-systems-of-record.md).
+conversation. See [ADR-0015](../adr/0015-bootstrap-entity-graph-from-systems-of-record.md).
 
 This solves two problems at once. Binding disappears for baseline entities: one derived *from*
 the `Customer` dimension **is** that dimension, so there is nothing to map. And the ontology
@@ -223,7 +223,7 @@ is only an anchor.
 from the organisation's own conversations — not an index for instance-level factual lookup.
 
 Relation vocabulary is **derived, not declared**. No predefined ontology: the
-[prior-art survey](../01-research/2026-08-17-context-graph-prior-art.md) found predefined
+prior-art survey (historical source; not included in the public edition) found predefined
 schemas to be a leading cause of enterprise knowledge-graph failure, decaying from the day
 they ship and unknowable before the data exists.
 
@@ -244,9 +244,9 @@ Three hard constraints:
 
 - **Originals are never destroyed.** Translation, summarisation, chunking and extraction all
   produce *derived* artefacts linked to a preserved source. See
-  [ADR-0004](adr/0004-preserve-originals-translate-at-consumption.md).
+  [ADR-0004](../adr/0004-preserve-originals-translate-at-consumption.md).
 - **Source access-control metadata is recorded at ingest**, even though phase 1 enforces
-  nothing. See [ADR-0006](adr/0006-record-source-acls-without-enforcing.md).
+  nothing. See [ADR-0006](../adr/0006-record-source-acls-without-enforcing.md).
 
 **Skills and prompts are stored context**, held in the same store and tagged as a distinct
 type. They are not a separate system.
@@ -254,13 +254,13 @@ type. They are not a separate system.
 ### 3.3 Serve
 
 **The consumer is an agent. There is no human interface.** A human who needs context goes
-through an agent, which assembles it for them. See [ADR-0005](adr/0005-serve-agents-only.md).
+through an agent, which assembles it for them. See [ADR-0005](../adr/0005-serve-agents-only.md).
 
 Serving is **on request**. The store does not invoke anything, at any stage.
 
 #### Two-level retrieval
 
-See [ADR-0014](adr/0014-two-level-agent-native-retrieval.md).
+See [ADR-0014](../adr/0014-two-level-agent-native-retrieval.md).
 
 **Level 1 — the graph scopes.** Resolves the task into relations, and into which systems own
 the relevant facts. Returns *scopes and routing*, **never content**.
@@ -269,7 +269,7 @@ the relevant facts. Returns *scopes and routing*, **never content**.
 Returns content, provenance, and gaps.
 
 The graph never hands text to the agent. That is what avoids the precision dilution documented
-in the [prior-art survey](../01-research/2026-08-17-context-graph-prior-art.md) — graph
+in the prior-art survey (historical source; not included in the public edition) — graph
 retrieval scores highest factual correctness but *lowest context relevance* because traversal
 drags in extraneous material. Scoping instead of answering removes the problem rather than
 mitigating it.
@@ -447,9 +447,9 @@ information, and it is unrecoverable once discarded.
 
 The collapse happens **at retrieval, relative to the consuming context** — an agent working a
 marketing task should weigh marketing participants' scores more heavily than IT's. This is the
-same principle as [ADR-0004](adr/0004-preserve-originals-translate-at-consumption.md):
+same principle as [ADR-0004](../adr/0004-preserve-originals-translate-at-consumption.md):
 preserve the original, derive at consumption. See
-[ADR-0010](adr/0010-retain-all-rater-scores.md).
+[ADR-0010](../adr/0010-retain-all-rater-scores.md).
 
 ### External signals: no human rating in v1
 
@@ -468,7 +468,7 @@ customers experience?*
 
 Segmentation will be wrong early, and a queue that regularly contains things people don't
 recognise is a queue they stop opening. So correction is part of the rating surface, not a
-follow-on feature. See [ADR-0011](adr/0011-report-with-free-text-reason.md).
+follow-on feature. See [ADR-0011](../adr/0011-report-with-free-text-reason.md).
 
 **One report action, with a required free-text reason.** No categories — whatever the person
 means goes in their own words. The taxonomy will be *derived* from real reports later, not
@@ -536,15 +536,15 @@ for now".
 9. **Canonical language for derived artefacts** — originals are preserved (ADR-0004), but the
    working language of the derived layer is unspecified
 10. **Urgency as a third axis** — deferred, not rejected (§5)
-11. **Relation vocabulary drift.** [ADR-0012](adr/0012-type-level-entities-and-typed-relations.md)
+11. **Relation vocabulary drift.** [ADR-0012](../adr/0012-type-level-entities-and-typed-relations.md)
     derives relations rather than declaring them, so `complain about` and `raise issues with`
     may be extracted separately for the same fact, fragmenting the evidence that aggregation
     depends on. This is the entity-resolution problem displaced onto relations
-12. **The human validation mechanism for new entities.** [ADR-0015](adr/0015-bootstrap-entity-graph-from-systems-of-record.md)
+12. **The human validation mechanism for new entities.** [ADR-0015](../adr/0015-bootstrap-entity-graph-from-systems-of-record.md)
     gates conversation-derived entity creation behind human confirmation and explicitly does
     not design it. If nobody performs the step, entity creation stalls and the graph silently
     stops growing
-13. **Coverage selection under budget.** [ADR-0014](adr/0014-two-level-agent-native-retrieval.md)
+13. **Coverage selection under budget.** [ADR-0014](../adr/0014-two-level-agent-native-retrieval.md)
     replaces ranking with set-level coverage optimisation. That needs a redundancy notion that
     does not yet exist, and standard IR metrics do not measure it
 14. **Keeping the authoritative-for relations current.** §3.0 has the graph route agents to the
@@ -563,7 +563,7 @@ for now".
 
 Each ADR carries a *"What would make us revisit this"* section. Those are aggregated and
 operationalised — observation, measure, and whether a home-scale validation instance can test
-them at all — in [falsification-criteria.md](falsification-criteria.md).
+them at all — in [falsification-criteria.md](../falsification-criteria.md).
 
 Two findings from writing it are worth carrying here:
 
@@ -577,17 +577,17 @@ Two findings from writing it are worth carrying here:
 
 | ADR | Decision |
 |---|---|
-| [0002](adr/0002-phase-1-is-a-technology-agnostic-framework.md) | Phase 1 is a technology-agnostic framework, not an implementation |
-| [0003](adr/0003-measure-context-quality-by-declared-assumptions.md) | Measure context quality by declared assumptions |
-| [0004](adr/0004-preserve-originals-translate-at-consumption.md) | Preserve originals; translate only at consumption |
-| [0005](adr/0005-serve-agents-only.md) | Serve agents only; no human interface |
-| [0006](adr/0006-record-source-acls-without-enforcing.md) | Record source ACLs at ingest without enforcing them |
-| [0007](adr/0007-two-sources-of-truth.md) | Obsidian is truth for personal work; git for collaboration |
-| [0008](adr/0008-two-axis-scoring-value-volatility.md) | Score context on two axes: Value × Volatility, with reasons |
-| [0009](adr/0009-topics-as-the-unit-of-context.md) | Topics are the unit of context; the store is a linked topic graph |
-| [0010](adr/0010-retain-all-rater-scores.md) | Retain every rater's score; collapse only at retrieval |
-| [0011](adr/0011-report-with-free-text-reason.md) | Corrections are a single report action with a free-text reason |
-| [0012](adr/0012-type-level-entities-and-typed-relations.md) | Topics carry type-level entities; links are typed relations aggregated across topics |
-| [0013](adr/0013-context-store-enriches-systems-of-record.md) | The context store enriches systems of record and never asserts what they own |
-| [0014](adr/0014-two-level-agent-native-retrieval.md) | Two-level retrieval — graph scopes, vector selects — with an agent-native contract |
-| [0015](adr/0015-bootstrap-entity-graph-from-systems-of-record.md) | Bootstrap the entity graph from ERP and warehouse schema; enrich from conversation |
+| [0002](../adr/0002-phase-1-is-a-technology-agnostic-framework.md) | Phase 1 is a technology-agnostic framework, not an implementation |
+| [0003](../adr/0003-measure-context-quality-by-declared-assumptions.md) | Measure context quality by declared assumptions |
+| [0004](../adr/0004-preserve-originals-translate-at-consumption.md) | Preserve originals; translate only at consumption |
+| [0005](../adr/0005-serve-agents-only.md) | Serve agents only; no human interface |
+| [0006](../adr/0006-record-source-acls-without-enforcing.md) | Record source ACLs at ingest without enforcing them |
+| [0007](../adr/0007-two-sources-of-truth.md) | Obsidian is truth for personal work; git for collaboration |
+| [0008](../adr/0008-two-axis-scoring-value-volatility.md) | Score context on two axes: Value × Volatility, with reasons |
+| [0009](../adr/0009-topics-as-the-unit-of-context.md) | Topics are the unit of context; the store is a linked topic graph |
+| [0010](../adr/0010-retain-all-rater-scores.md) | Retain every rater's score; collapse only at retrieval |
+| [0011](../adr/0011-report-with-free-text-reason.md) | Corrections are a single report action with a free-text reason |
+| [0012](../adr/0012-type-level-entities-and-typed-relations.md) | Topics carry type-level entities; links are typed relations aggregated across topics |
+| [0013](../adr/0013-context-store-enriches-systems-of-record.md) | The context store enriches systems of record and never asserts what they own |
+| [0014](../adr/0014-two-level-agent-native-retrieval.md) | Two-level retrieval — graph scopes, vector selects — with an agent-native contract |
+| [0015](../adr/0015-bootstrap-entity-graph-from-systems-of-record.md) | Bootstrap the entity graph from ERP and warehouse schema; enrich from conversation |

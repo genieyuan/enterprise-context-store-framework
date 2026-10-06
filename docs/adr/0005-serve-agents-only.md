@@ -72,4 +72,4 @@ contract this decision exists to avoid.
 
   be just agent, no human. if Human needs the info, they can access through an agent and it
   will assemble it. The output format should be whatever is easier for Agent"*
-- [Phase 1 framework](../phase-1-framework.md) §3.3
+- [Phase 1 framework](../framework/phase-1.md) §3.3

@@ -4,7 +4,7 @@
 
 - **Version:** v1
 - **Date:** 2026-08-17
-- **Covers:** ADR-0001 … ADR-0015, [framework doc-v4](phase-1-framework.md)
+- **Covers:** ADR-0001 … ADR-0015, [framework doc-v4](framework/phase-1.md)
 
 > **Why falsification and not acceptance.** Acceptance criteria ask *"did it work?"* — and
 > almost any small pilot will appear to work while telling you very little. These ask *"what

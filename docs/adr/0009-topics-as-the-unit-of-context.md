@@ -97,6 +97,6 @@ advisory overlay rather than the primary structure.
 
 ## References
 
-- [Phase 1 framework](../phase-1-framework.md) §3.2, §5
+- [Phase 1 framework](../framework/phase-1.md) §3.2, §5
 - Open questions §7.2, §7.3, §7.4 — segmentation correction, cross-thread continuity,
   and coverage when people skip their queue

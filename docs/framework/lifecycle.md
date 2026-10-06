@@ -1,5 +1,9 @@
 # ECS Lifecycle
 
+> See the [October compiler direction](../experience-distillation.md) for reusable frameworks
+> and proposed Skills within this unchanged four-stage lifecycle.
+
+
 **Phase 1 / public-channel / security-deferred boundary:** this is a public architecture document. It does not authorize ingestion of private or restricted channels, and security enforcement is deferred to a future phase.
 # Enterprise Context Store lifecycle blueprint — Gate 1 final
 

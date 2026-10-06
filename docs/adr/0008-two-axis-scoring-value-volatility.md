@@ -98,4 +98,4 @@ they mislead more than they help — in which case volatility becomes a purely o
 
 ## References
 
-- [Phase 1 framework](../phase-1-framework.md) §5
+- [Phase 1 framework](../framework/phase-1.md) §5

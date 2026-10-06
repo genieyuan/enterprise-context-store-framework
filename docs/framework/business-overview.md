@@ -1,5 +1,11 @@
 # ECS Framework: Business Overview
 
+> **October 2026 reading update:** see [experience distillation](../experience-distillation.md)
+> and the [refreshed architecture](../reference-architecture.md) for the AI-agent compiler,
+> illustrative knowledge frameworks, and searchable proposed Skills. This document retains
+> its earlier scope; the update is not a runtime release or a silent amendment of accepted ADRs.
+
+
 *v0.3 · Business overview · About five minutes*
 
 ## Executive summary
