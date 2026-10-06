@@ -73,4 +73,4 @@ then the answer is likely tiered storage for originals, not deletion.
 ## References
 
   — *"original, then translation in consumption"*
-- [Phase 1 framework](../phase-1-framework.md) §3.2
+- [Phase 1 framework](../framework/phase-1.md) §3.2

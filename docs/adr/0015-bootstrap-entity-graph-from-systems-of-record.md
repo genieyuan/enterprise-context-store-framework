@@ -19,7 +19,7 @@ noisy. Early relations are extracted with no vocabulary to anchor them, so `cust
 store alongside systems of record. If `customers` in the store and the `Customer` dimension in
 the warehouse are independently derived, something has to join them — and any mapping layer is
 brittle, drifts, and starts to look like the ontology the
-[prior-art survey](../../01-research/2026-08-17-context-graph-prior-art.md) found kills these
+prior-art survey (historical source; not included in the public edition) found kills these
 projects.
 
 ADR-0012 also recorded a consequence honestly: a derived type-level layer **is** an ontology,
@@ -110,4 +110,4 @@ transactional structure people never reason in. The fallback is to use the schem
   baseline. a simple and solid one. Then for each conversation, dialogue, we should be able to
   derive more relationship between different entity. However, we certainly should have a way
   for human to put in their validation for entity creation"*
-- Open question: the human validation mechanism — [framework §7](../phase-1-framework.md)
+- Open question: the human validation mechanism — [framework §7](../framework/phase-1.md)

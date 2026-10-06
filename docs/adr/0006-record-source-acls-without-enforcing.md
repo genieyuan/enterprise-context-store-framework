@@ -76,4 +76,4 @@ forcing a decision about whether to ingest it and how to mark it.
 
   just ingest the public channels. Security is a completely separate topic which we need to
   discuss further in future phases."*
-- [Phase 1 framework](../phase-1-framework.md) — Security tier, §3.2
+- [Phase 1 framework](../framework/phase-1.md) — Security tier, §3.2

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1420" viewBox="0 0 1680 1420" role="img" aria-labelledby="title desc">
+<title id="title">ECS compiler: enterprise experience becomes reusable capability</title>
+<desc id="desc">Capture enterprise evidence, classify it, distill it with an AI agent into reusable frameworks and searchable proposed Skills, and serve supporting evidence or proposed actions. Corrections and outcomes return to Capture. Publication is optional and runtime authorization remains separate.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#16756d"/></marker><marker id="grayarrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#6a7c8b"/></marker></defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#142e43}.title{font-size:44px;font-weight:700;letter-spacing:-1px}.subtitle{font-size:23px;fill:#4d6576}.kicker{font-size:15px;font-weight:700;letter-spacing:2px;fill:#16756d}.head{font-size:25px;font-weight:700}.body{font-size:20px;fill:#486172}.small{font-size:17px;fill:#486172}.strong{font-weight:700;fill:#142e43}.step{font-size:15px;font-weight:700;letter-spacing:1.5px;fill:#16756d}.edge{fill:none;stroke:#16756d;stroke-width:3;marker-end:url(#arrow)}.branch{fill:none;stroke:#6a7c8b;stroke-width:2;stroke-dasharray:6 5;marker-end:url(#grayarrow)}</style>
+<rect width="1680" height="1420" fill="#f7fafb"/>
+<text x="60" y="54" class="kicker">ENTERPRISE CONTEXT STORE · CONCEPTUAL DESIGN</text>
+<text x="60" y="113" class="title">Enterprise experience → reusable capability</text>
+<text x="60" y="151" class="subtitle">The compiler distills what an enterprise knows—and learns from how its work is corrected.</text>
+<rect x="60" y="185" width="1560" height="58" rx="12" fill="#e8eff3"/>
+<text x="85" y="221" class="small"><tspan class="strong">ACROSS THE ENTIRE LOOP</tspan><tspan dx="26">Evidence &amp; provenance</tspan><tspan dx="28">Scope &amp; uncertainty</tspan><tspan dx="28">Access &amp; authority</tspan><tspan dx="28">Version &amp; freshness</tspan></text>
+<rect x="330" y="268" width="590" height="326" rx="20" fill="#e7f4f1" stroke="#97c9bf" stroke-width="1.5"/>
+<text x="355" y="302" class="kicker">THE COMPILER · MODEL-AGNOSTIC</text>
+<!-- Directed connectors are behind their nodes. -->
+<path d="M310 441 H355" class="edge"/>
+<path d="M595 441 H640" class="edge"/>
+<path d="M900 441 H945" class="edge"/>
+<path d="M1245 441 H1290" class="edge"/>
+<path d="M1095 569 V590 H840 V622" class="edge"/>
+<path d="M1245 555 H1270 V580 H1642 V901 H1100 V920" class="branch"/>
+<path d="M1260 960 H1290" class="branch"/>
+<path d="M1600 569 H1655 V1066 H30 V449 H60" class="edge"/>
+<!-- Primary nodes -->
+<rect x="60" y="329" width="250" height="240" rx="14" fill="#fff" stroke="#c6d5df" stroke-width="1.5"/>
+<text x="85" y="365" class="step">01 · CAPTURE</text>
+<text x="85" y="406" class="head">Enterprise</text><text x="85" y="435" class="head">experience</text>
+<text x="85" y="478" class="body">Documents &amp; facts</text><text x="85" y="508" class="body">Work &amp; decisions</text><text x="85" y="538" class="body">Attempts &amp; outcomes</text>
+<rect x="355" y="329" width="240" height="240" rx="14" fill="#fff" stroke="#97c9bf" stroke-width="1.5"/>
+<text x="380" y="365" class="step">02 · CLASSIFY</text><text x="380" y="406" class="head">Classification</text><text x="380" y="435" class="head">model</text>
+<text x="380" y="478" class="body">Identify knowledge</text><text x="380" y="505" class="body">types &amp; route work</text><text x="380" y="543" class="small">Multiple labels allowed</text>
+<rect x="640" y="329" width="260" height="240" rx="14" fill="#fff" stroke="#97c9bf" stroke-width="1.5"/>
+<text x="665" y="365" class="step">03 · DISTILL</text><text x="665" y="406" class="head">AI agent</text>
+<text x="665" y="449" class="body">Distill reusable</text><text x="665" y="477" class="body">methods &amp; judgment</text><text x="665" y="514" class="small strong">LLM or post-trained</text><text x="665" y="538" class="small strong">open-source model</text>
+<rect x="945" y="329" width="300" height="240" rx="14" fill="#d8eee8" stroke="#83b9ad" stroke-width="1.5"/>
+<text x="970" y="365" class="step">04 · REUSABLE ASSETS</text><text x="970" y="406" class="head">Frameworks +</text><text x="970" y="437" class="head">proposed Skills</text>
+<text x="970" y="480" class="body">Searchable before</text><text x="970" y="508" class="body">publication or execution</text><text x="970" y="543" class="small">Objects · actions · conditions</text>
+<rect x="1290" y="329" width="330" height="240" rx="14" fill="#142e43"/>
+<text x="1315" y="365" style="font-size:15px;font-weight:700;letter-spacing:1.5px;fill:#9ad3c6">05 · SERVE TO AGENTS</text>
+<text x="1315" y="407" style="font-size:25px;font-weight:700;fill:#fff">Supporting evidence</text><text x="1315" y="438" style="font-size:25px;font-weight:700;fill:#fff">or proposed actions</text>
+<text x="1315" y="482" style="font-size:20px;fill:#d0e0e8">Apply experience to</text><text x="1315" y="510" style="font-size:20px;fill:#d0e0e8">a new task</text><text x="1315" y="543" style="font-size:17px;fill:#9ad3c6">Retrieval does not authorize action</text>
+<!-- Supporting semantics -->
+<text x="60" y="614" class="kicker">KNOWLEDGE FRAMEWORKS · ILLUSTRATIVE &amp; EXTENSIBLE</text>
+<rect x="60" y="625" width="372" height="98" rx="12" fill="#fff" stroke="#97c9bf"/><text x="84" y="663" style="font-size:21px;font-weight:700">Concepts</text><text x="84" y="695" style="font-size:16px;fill:#486172">Definitions · categories · relationships</text>
+<rect x="456" y="625" width="372" height="98" rx="12" fill="#fff" stroke="#97c9bf"/><text x="480" y="663" style="font-size:21px;font-weight:700">Facts &amp; state</text><text x="480" y="695" style="font-size:16px;fill:#486172">Assertions · objects · time</text>
+<rect x="852" y="625" width="372" height="98" rx="12" fill="#fff" stroke="#97c9bf"/><text x="876" y="663" style="font-size:21px;font-weight:700">Rules &amp; decisions</text><text x="876" y="695" style="font-size:16px;fill:#486172">Conditions · consequences · exceptions</text>
+<rect x="1248" y="625" width="372" height="98" rx="12" fill="#fff" stroke="#97c9bf"/><text x="1272" y="663" style="font-size:21px;font-weight:700">Procedures</text><text x="1272" y="695" style="font-size:16px;fill:#486172">Steps · branches · recovery</text>
+<rect x="60" y="743" width="372" height="98" rx="12" fill="#fff" stroke="#97c9bf"/><text x="84" y="781" style="font-size:21px;font-weight:700">Experience &amp; cases</text><text x="84" y="813" style="font-size:16px;fill:#486172">Attempts · corrections · outcomes</text>
+<rect x="456" y="743" width="372" height="98" rx="12" fill="#fff" stroke="#97c9bf"/><text x="480" y="781" style="font-size:21px;font-weight:700">Judgment</text><text x="480" y="813" style="font-size:16px;fill:#486172">Criteria · trade-offs · heuristics</text>
+<rect x="852" y="743" width="372" height="98" rx="12" fill="#fff" stroke="#97c9bf"/><text x="876" y="781" style="font-size:21px;font-weight:700">Explanations &amp; hypotheses</text><text x="876" y="813" style="font-size:16px;fill:#486172">Mechanisms · evidence · possible tests</text>
+<rect x="1248" y="743" width="372" height="98" rx="12" fill="#fff" stroke="#97c9bf"/><text x="1272" y="781" style="font-size:21px;font-weight:700">Capabilities / affordances</text><text x="1272" y="813" style="font-size:16px;fill:#486172">Objects · actions · applicability</text>
+<text x="60" y="878" class="body">One source can yield several linked frameworks—not a fixed taxonomy or one template for every source.</text>
+<rect x="945" y="920" width="315" height="88" rx="12" fill="#fff" stroke="#b9c8d2" stroke-dasharray="6 5"/>
+<text x="970" y="953" class="small strong">OPTIONAL · PUBLISHED SKILLS</text><text x="970" y="980" class="small">Governed validation &amp; publication</text>
+<rect x="1290" y="920" width="290" height="88" rx="12" fill="#fff" stroke="#b9c8d2"/>
+<text x="1315" y="953" class="small strong">SEPARATE · AUTHORIZATION</text><text x="1315" y="980" class="small">Runtime policy gates execution</text>
+<rect x="370" y="1031" width="825" height="70" rx="12" fill="#16756d"/>
+<text x="397" y="1061" style="font-size:21px;font-weight:700;fill:#fff">Corrections + stated reasons + observed outcomes</text>
+<text x="397" y="1086" style="font-size:17px;fill:#d6eeea">Return as new evidence → strengthen, revise or challenge derived knowledge</text>
+<!-- Coverage contract -->
+<rect x="60" y="1128" width="1560" height="62" rx="12" fill="#e7f4f1"/>
+<text x="85" y="1166" style="font-size:21px;fill:#174f49"><tspan font-weight="700">Every useful fact</tspan> creates a proposed Skill or attaches as evidence to an existing one—not one Skill per fact.</text>
+<!-- Compact grounded example -->
+<text x="60" y="1233" class="kicker">ONE EPISODE → REUSABLE JUDGMENT</text>
+<text x="60" y="1268" class="body"><tspan class="strong">Attempt:</tspan> offer a renewal discount</text>
+<text x="60" y="1299" class="body"><tspan class="strong">Correction:</tspan> diagnose the billing issue</text>
+<text x="60" y="1330" class="body"><tspan class="strong">Outcome:</tspan> renewal followed the repair</text>
+<path d="M520 1279 H575" class="edge"/>
+<text x="610" y="1268" class="body strong">Proposed Skill: diagnose renewal risk</text>
+<text x="610" y="1299" class="body">Check operational friction before proposing concessions.</text>
+<text x="610" y="1330" class="small">Evidence-linked hypothesis—not proof that the repair caused renewal.</text>
+<line x1="60" y1="1360" x2="1620" y2="1360" stroke="#cedbe3"/>
+<text x="60" y="1391" class="small"><tspan class="strong">Success:</tspan> better performance on new tasks and fewer repeated corrections—not more Skills.</text>
+<text x="1620" y="1391" text-anchor="end" style="font-size:15px;fill:#486172">Design direction · Not an implementation claim · 05 Oct 2026</text>
+</svg>

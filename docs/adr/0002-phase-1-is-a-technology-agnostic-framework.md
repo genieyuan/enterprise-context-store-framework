@@ -77,4 +77,4 @@ phase 2 begins.
 
   the framework, no implementation. phase 2 is implementation using specific tech (it can be
   different techs over time as the tech evolve so fast)"*
-- [Phase 1 framework](../phase-1-framework.md) §2
+- [Phase 1 framework](../framework/phase-1.md) §2

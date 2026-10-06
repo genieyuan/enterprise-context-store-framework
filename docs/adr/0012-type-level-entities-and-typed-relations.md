@@ -12,7 +12,7 @@
 [ADR-0009](0009-topics-as-the-unit-of-context.md) left the linking mechanism unspecified.
 Left as-is, the only available signal is semantic similarity between topics, which produces
 **co-occurrence edges** — and the
-[prior-art survey](../../01-research/2026-08-17-context-graph-prior-art.md) found those
+prior-art survey (historical source; not included in the public edition) found those
 reported consistently as cheap and low-value.
 
 The survey also found that **every architecture that works has an entity layer.** GraphRAG,
@@ -122,7 +122,7 @@ one.
 
 ## References
 
-- [Context graph prior art](../../01-research/2026-08-17-context-graph-prior-art.md) §3, §6
+- Context graph prior art (historical source; not included in the public edition) §3, §6
 - Decision-maker, verbatim: *"each topic should have multiple entity related. The graph should
   decide how the entities are related. in this case, we are not talking about customer A and
   customer B as two entities, we are talking about customers and suppliers are two entities."*

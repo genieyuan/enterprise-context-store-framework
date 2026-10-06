@@ -11,7 +11,7 @@
 retrieval design then has to be built for one, and the first version of this design was not —
 it was a human research workflow wearing an API.
 
-Separately, the [prior-art survey](../../01-research/2026-08-17-context-graph-prior-art.md)
+Separately, the prior-art survey (historical source; not included in the public edition)
 found that graph retrieval scores **highest factual correctness but lowest context relevance**:
 traversal pulls in extraneous material and dilutes precision.
 
@@ -113,7 +113,7 @@ silently abandoned, since the measurement loop depends on it.
 
 ## References
 
-- [Prior art survey](../../01-research/2026-08-17-context-graph-prior-art.md) §4, §5
+- Prior art survey (historical source; not included in the public edition) §4, §5
 - Decision-maker: *"we find the relationship through graph retrival, we then find search the
   vector index to find the relevant topics accordingly. It should be a two level search"* and
   *"this context store is NOT decided for human. It is for agents… It has to be designed and

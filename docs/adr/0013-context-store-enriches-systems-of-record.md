@@ -102,4 +102,4 @@ and should be recognised as one rather than absorbed.
 
 - [ADR-0012](0012-type-level-entities-and-typed-relations.md) — the type/instance split now
   has a structural reason: instance identity already has an owner
-- [Phase 1 framework](../phase-1-framework.md) §3
+- [Phase 1 framework](../framework/phase-1.md) §3

@@ -1,5 +1,11 @@
 # Enterprise Context Store (ECS) — Framework Cover Page
 
+> **October 2026 reading update:** see [experience distillation](../experience-distillation.md)
+> and the [refreshed architecture](../reference-architecture.md) for the AI-agent compiler,
+> illustrative knowledge frameworks, and searchable proposed Skills. This document retains
+> its earlier scope; the update is not a runtime release or a silent amendment of accepted ADRs.
+
+
 ## One-line definition
 
 > **ECS is a vendor-neutral framework for turning fragmented enterprise signals and accumulated operating experience into governed, task-ready context for AI agents.**

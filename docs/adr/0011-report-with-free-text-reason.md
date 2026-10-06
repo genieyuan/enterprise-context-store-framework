@@ -94,5 +94,5 @@ with free text retained for everything else.
 
 - Life Capture A9 — *"overrides strongly prompt for a reason"*, *"Every action supports Undo
   and is idempotent"*
-- [Phase 1 framework](../phase-1-framework.md) §5
+- [Phase 1 framework](../framework/phase-1.md) §5
 - Open question §7.2 supersedes into this ADR; §7.3 (cross-thread continuity) remains open

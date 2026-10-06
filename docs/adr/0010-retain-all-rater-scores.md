@@ -78,5 +78,5 @@ underlying scores, which would be the one irreversible move.
 
 ## References
 
-- [Phase 1 framework](../phase-1-framework.md) §5
+- [Phase 1 framework](../framework/phase-1.md) §5
 - Open question §7.5 — the collapse function itself is unspecified

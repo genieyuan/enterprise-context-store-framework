@@ -101,4 +101,4 @@ should be checked early.
 ## References
 
   00:00:52, 00:18:21, 00:18:50, 00:29:42
-- [Phase 1 framework](../phase-1-framework.md) §1, §5
+- [Phase 1 framework](../framework/phase-1.md) §1, §5

@@ -1,76 +1,116 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="860" viewBox="0 0 1600 860" role="img" aria-labelledby="title desc">
-  <title id="title">Enterprise Context Store reference architecture</title>
-  <desc id="desc">A left-to-right flow from enterprise signals through capture, evidence, topics, graph scopes/routes/IDs, vector permitted evidence content, agent context service, and AI agents, with authoritative systems of record, accepted governed feedback, and dashed candidate episode projections.</desc>
-  <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,3 L0,6 Z" fill="#334155"/></marker>
-    <marker id="arrow-dashed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,3 L0,6 Z" fill="#7c3aed"/></marker>
-    <style>
-      .box{stroke:#334155;stroke-width:2;rx:14} .main{fill:#e0f2fe} .store{fill:#dcfce7} .service{fill:#fef3c7} .agent{fill:#fce7f3} .authority{fill:#f1f5f9} .candidate{fill:#f5f3ff;stroke:#7c3aed;stroke-dasharray:9 7}
-      .label{font:600 21px sans-serif;fill:#0f172a} .small{font:16px sans-serif;fill:#334155} .note{font:15px sans-serif;fill:#475569} .line{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)} .dashed{stroke:#7c3aed;stroke-width:2.5;stroke-dasharray:10 8;fill:none;marker-end:url(#arrow-dashed)}
-    </style>
-  </defs>
-  <rect width="1600" height="860" fill="#ffffff"/>
-  <text x="60" y="55" class="label">Enterprise Context Store — reference architecture</text>
-  <text x="60" y="84" class="note">Accepted canonical unit: Topic · candidate projections are visibly dashed · governed feedback is accepted</text>
-
-  <rect x="55" y="180" width="180" height="105" class="box main"/>
-  <text x="145" y="220" text-anchor="middle" class="label">Enterprise</text><text x="145" y="248" text-anchor="middle" class="label">signals</text>
-  <text x="145" y="272" text-anchor="middle" class="small">internal + external</text>
-
-  <rect x="285" y="180" width="190" height="105" class="box main"/>
-  <text x="380" y="220" text-anchor="middle" class="label">Capture &amp;</text><text x="380" y="248" text-anchor="middle" class="label">normalization</text>
-  <text x="380" y="272" text-anchor="middle" class="small">source identity retained</text>
-
-  <rect x="525" y="180" width="190" height="105" class="box store"/>
-  <text x="620" y="220" text-anchor="middle" class="label">Raw evidence</text><text x="620" y="248" text-anchor="middle" class="label">ledger</text>
-  <text x="620" y="272" text-anchor="middle" class="small">append-only history</text>
-
-  <rect x="765" y="180" width="190" height="105" class="box store"/>
-  <text x="860" y="220" text-anchor="middle" class="label">Canonical</text><text x="860" y="248" text-anchor="middle" class="label">Topic layer</text>
-  <text x="860" y="272" text-anchor="middle" class="small">sole accepted unit</text>
-
-  <rect x="1005" y="165" width="220" height="60" class="box store"/>
-  <text x="1115" y="191" text-anchor="middle" class="label">Graph</text>
-  <text x="1115" y="214" text-anchor="middle" class="small">scopes · routes · IDs only</text>
-  <rect x="1005" y="245" width="220" height="60" class="box store"/>
-  <text x="1115" y="271" text-anchor="middle" class="label">Vector</text>
-  <text x="1115" y="294" text-anchor="middle" class="small">permitted evidence content</text>
-
-  <rect x="1275" y="180" width="220" height="105" class="box service"/>
-  <text x="1385" y="220" text-anchor="middle" class="label">Agent context</text><text x="1385" y="248" text-anchor="middle" class="label">service</text>
-  <text x="1385" y="272" text-anchor="middle" class="small">coverage under budget</text>
-
-  <rect x="1335" y="380" width="180" height="90" class="box agent"/>
-  <text x="1425" y="420" text-anchor="middle" class="label">AI agents</text><text x="1425" y="448" text-anchor="middle" class="small">consumer</text>
-
-  <path d="M235 232 H285 M475 232 H525 M715 232 H765 M955 232 H985 Q1005 232 1005 195 M1225 275 H1275 M1385 285 V380" class="line"/>
-  <path d="M1115 225 V245" class="line"/>
-
-  <rect x="825" y="390" width="300" height="115" class="box authority"/>
-  <text x="975" y="428" text-anchor="middle" class="label">Authoritative systems</text><text x="975" y="456" text-anchor="middle" class="label">of record</text><text x="975" y="482" text-anchor="middle" class="small">facts + instance IDs</text>
-  <path d="M1275 420 H1190 Q1160 420 1125 435" class="line"/>
-  <text x="1200" y="402" text-anchor="middle" class="note">ECS routing/context</text>
-  <path d="M1125 470 H1210 Q1280 470 1335 445" class="line"/>
-  <text x="1235" y="505" text-anchor="middle" class="note">owned facts come from source</text>
-  <text x="1150" y="535" text-anchor="middle" class="note">agent may read the authoritative owner directly</text>
-
-  <rect x="470" y="590" width="660" height="70" class="box store"/>
-  <text x="800" y="620" text-anchor="middle" class="label">Governed feedback to capture (accepted)</text><text x="800" y="646" text-anchor="middle" class="small">assumptions · corrections · actions · write-backs · outcomes</text>
-  <path d="M1425 470 V570 H620 V285" class="line"/>
-  <text x="1050" y="575" class="note">observable feedback only; no private chain-of-thought</text>
-
-  <rect x="470" y="710" width="500" height="95" class="box candidate"/>
-  <text x="720" y="740" text-anchor="middle" class="label">OperationalEpisode (candidate)</text>
-  <text x="720" y="765" text-anchor="middle" class="small">not accepted Phase 1 contract</text>
-  <text x="720" y="788" text-anchor="middle" class="note">future authority decision and ADR required</text>
-  <rect x="1000" y="710" width="500" height="95" class="box candidate"/>
-  <text x="1250" y="740" text-anchor="middle" class="label">DecisionEpisode (candidate)</text>
-  <text x="1250" y="765" text-anchor="middle" class="small">not accepted Phase 1 contract</text>
-  <text x="1250" y="788" text-anchor="middle" class="note">future authority decision and ADR required</text>
-
-  <rect x="55" y="360" width="620" height="110" class="box authority"/>
-  <text x="365" y="397" text-anchor="middle" class="label">Governance across every stage</text>
-  <text x="365" y="426" text-anchor="middle" class="small">identity / ACL · provenance · authority · temporal validity</text>
-  <text x="365" y="452" text-anchor="middle" class="small">retention / deletion / privacy · human validation · observability</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1450" viewBox="0 0 2000 1450" role="img" aria-labelledby="title desc">
+<title id="title">Enterprise Context Store — reference architecture</title><desc id="desc">Enterprise experience enters Capture, classification and AI-agent distillation produce reusable frameworks, governed evidence and claims support authorized context delivery to consuming agents. Source-system authority, optional publication, separate execution authorization, and observable feedback remain distinct. Future model training and Hindsight research are outside the core flow.</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8Z" fill="#52647a"/></marker><style>text{font-family:Arial,sans-serif;fill:#172b43}.title{font-size:38px;font-weight:700}.h{font-size:27px;font-weight:700}.b{font-size:21px}.s{font-size:19px}.tag{font-size:17px;font-weight:700;letter-spacing:1px}.edge{fill:none;stroke:#52647a;stroke-width:3;marker-end:url(#a)}.dash{stroke-dasharray:9 7}</style></defs>
+<rect width="2000" height="1450" fill="#fff"/>
+<path d="M360 365 H400" class="edge"/>
+<path d="M900 365 H940" class="edge"/>
+<path d="M1420 365 H1460" class="edge"/>
+<path d="M1700 755 V875" class="edge"/>
+<path d="M1460 970 H1210" class="edge"/>
+<path d="M1210 920 H1460" class="edge"/>
+<path d="M750 755 V850 H700 V875" class="edge dash"/>
+<path d="M1940 965 H1965 V1110 H35 V770 H210 V755" class="edge"/>
+<rect x="60" y="135" width="1880" height="66" rx="14" fill="#f3f6fa" stroke="#c4cedb" stroke-width="2"/>
+<text x="84" y="177" class="tag">GOVERNANCE AT EVERY STAGE</text>
+<text x="440" y="177" class="b">Identity / ACL · provenance · authority · time · retention / deletion · privacy · human validation · observability</text>
+<text x="60" y="57" class="title">Enterprise experience → reusable, evidence-linked capability</text>
+<text x="60" y="98" class="b">Phase 1: public-channel scope · ACL metadata recorded; enforcement not implemented · conceptual design</text>
+<rect x="60" y="245" width="300" height="510" rx="14" fill="#eef5fc" stroke="#c4cedb" stroke-width="2"/>
+<text x="84" y="289" class="h">01  CAPTURE</text>
+<text x="84" y="337" class="b">Enterprise experience</text>
+<text x="84" y="367" class="b">Documents · conversations</text>
+<text x="84" y="397" class="b">Existing work artifacts</text>
+<text x="84" y="427" class="b">Internal + external sources</text>
+<rect x="84" y="458" width="252" height="153" rx="14" fill="#fff" stroke="#c4cedb" stroke-width="2"/>
+<text x="108" y="496" class="s">Source observations</text>
+<text x="108" y="525" class="s">EvidenceEvent</text>
+<text x="108" y="554" class="s">Identity + provenance</text>
+<text x="108" y="583" class="s">Governed history</text>
+<text x="84" y="655" class="s">Observable work only</text>
+<text x="84" y="684" class="s">No private chain-of-thought</text>
+<text x="84" y="713" class="s">Source meaning ≠ schema</text>
+<rect x="400" y="245" width="500" height="510" rx="14" fill="#eef5fc" stroke="#c4cedb" stroke-width="2"/>
+<text x="424" y="289" class="h">02  COMPILE</text>
+<text x="424" y="336" class="b">Classification model → AI agent</text>
+<text x="424" y="367" class="b">LLM or post-trained open-source model</text>
+<text x="424" y="409" class="tag">ILLUSTRATIVE / EXTENSIBLE TARGETS</text>
+<rect x="424" y="430" width="218" height="50" rx="14" fill="#fff" stroke="#c4cedb" stroke-width="2"/>
+<text x="448" y="462" class="s">Concept</text>
+<rect x="654" y="430" width="218" height="50" rx="14" fill="#fff" stroke="#c4cedb" stroke-width="2"/>
+<text x="678" y="462" class="s">Fact / state</text>
+<rect x="424" y="492" width="218" height="50" rx="14" fill="#fff" stroke="#c4cedb" stroke-width="2"/>
+<text x="448" y="524" class="s">Rule / decision</text>
+<rect x="654" y="492" width="218" height="50" rx="14" fill="#fff" stroke="#c4cedb" stroke-width="2"/>
+<text x="678" y="524" class="s">Procedure</text>
+<rect x="424" y="554" width="218" height="50" rx="14" fill="#fff" stroke="#c4cedb" stroke-width="2"/>
+<text x="448" y="586" class="s">Experience / case</text>
+<rect x="654" y="554" width="218" height="50" rx="14" fill="#fff" stroke="#c4cedb" stroke-width="2"/>
+<text x="678" y="586" class="s">Judgment</text>
+<rect x="424" y="616" width="218" height="50" rx="14" fill="#fff" stroke="#c4cedb" stroke-width="2"/>
+<text x="448" y="637" class="s">Explanation</text>
+<text x="448" y="659" class="s">/ hypothesis</text>
+<rect x="654" y="616" width="218" height="50" rx="14" fill="#fff" stroke="#c4cedb" stroke-width="2"/>
+<text x="678" y="637" class="s">Capability</text>
+<text x="678" y="659" class="s">/ affordance</text>
+<text x="424" y="709" class="s">Linked frameworks + searchable proposed Skills</text>
+<text x="424" y="735" class="s">Evidence, applicability and uncertainty retained</text>
+<rect x="940" y="245" width="480" height="510" rx="14" fill="#eef8f3" stroke="#c4cedb" stroke-width="2"/>
+<text x="964" y="289" class="h">CONTEXT STORE</text>
+<text x="964" y="337" class="s">Compiled product · not a lifecycle stage</text>
+<text x="964" y="366" class="s">Evidence retained before inference</text>
+<rect x="964" y="410" width="432" height="157" rx="14" fill="#fff" stroke="#c4cedb" stroke-width="2"/>
+<text x="988" y="448" class="b">EvidenceEvent</text>
+<text x="988" y="478" class="b">ContextClaim + EdgeClaim</text>
+<text x="988" y="508" class="b">Topic / DecisionCase projections</text>
+<text x="988" y="538" class="b">EvaluationEvent / OutcomeEvent</text>
+<text x="964" y="615" class="s">Frameworks + proposed Skills link to this spine</text>
+<text x="964" y="646" class="s">Exact asset mapping remains design work</text>
+<text x="964" y="677" class="s">Rebuildable graph / vector indexes</text>
+<text x="964" y="708" class="s">No second truth store · no MDM</text>
+<rect x="1460" y="245" width="480" height="510" rx="14" fill="#eef8f3" stroke="#c4cedb" stroke-width="2"/>
+<text x="1484" y="289" class="h">03  SERVE</text>
+<text x="1484" y="337" class="b">Task + principal + context budget</text>
+<text x="1484" y="369" class="b">Current authorization at delivery</text>
+<text x="1484" y="401" class="b">Graph: scopes, routes, evidence IDs</text>
+<text x="1484" y="433" class="b">Vector: permitted evidence content</text>
+<rect x="1484" y="488" width="432" height="112" rx="14" fill="#fff" stroke="#c4cedb" stroke-width="2"/>
+<text x="1508" y="526" class="s">Bounded ContextPackage</text>
+<text x="1508" y="554" class="s">Durable ContextDeliveryReceipt</text>
+<text x="1508" y="582" class="s">Exact versions + policy + use record</text>
+<text x="1484" y="646" class="s">Evidence / proposed actions, not permission</text>
+<text x="1484" y="677" class="s">Provenance · freshness · contradictions</text>
+<text x="1484" y="708" class="s">Safe omissions · coverage under budget</text>
+<rect x="60" y="785" width="1880" height="61" rx="14" fill="#f5f7fa" stroke="#c4cedb" stroke-width="2"/>
+<text x="84" y="824" class="tag">CAPABILITY COVERAGE</text>
+<text x="345" y="824" class="b">Every useful fact creates a proposed Skill or attaches supporting / contradicting evidence to an existing one.</text>
+<rect x="60" y="875" width="650" height="158" rx="14" fill="#f6f7fa" stroke="#c4cedb" stroke-width="2" stroke-dasharray="9 7"/>
+<text x="84" y="914" class="h">Optional governed publication</text>
+<text x="84" y="956" class="b">Proposed Skills can remain useful without publication.</text>
+<text x="84" y="985" class="b">Published ≠ authorized to execute.</text>
+<text x="84" y="1014" class="b">Exact lifecycle / schema remains detailed-design work.</text>
+<rect x="750" y="875" width="460" height="158" rx="14" fill="#fff7e8" stroke="#c4cedb" stroke-width="2"/>
+<text x="774" y="914" class="h">Authoritative source systems</text>
+<text x="774" y="956" class="b">Current operational facts + source records</text>
+<text x="774" y="985" class="b">Agents resolve routes under source ACLs</text>
+<text x="774" y="1014" class="b">Context access ≠ source-record access</text>
+<rect x="1460" y="875" width="480" height="158" rx="14" fill="#fff7e8" stroke="#c4cedb" stroke-width="2"/>
+<text x="1484" y="914" class="h">Consuming AI agents</text>
+<text x="1484" y="956" class="s">Reason, propose, then check action authority</text>
+<text x="1484" y="985" class="s">Execution authorization remains separate</text>
+<text x="1484" y="1014" class="s">Notifications belong to consuming agents</text>
+<text x="1230" y="907" class="s">Source facts</text>
+<text x="1230" y="1005" class="s">Routed read</text>
+<rect x="420" y="1072" width="1235" height="74" rx="14" fill="#fff" stroke="#c4cedb" stroke-width="2"/>
+<text x="444" y="1103" class="tag">04  CONTINUOUS LEARNING</text>
+<text x="444" y="1132" class="b">Reuse → corrections + stated reasons + revised results + observed outcomes → Capture → re-distillation</text>
+<rect x="60" y="1182" width="925" height="161" rx="14" fill="#f8f8fa" stroke="#b9c2ce" stroke-width="2" stroke-dasharray="9 7"/>
+<text x="84" y="1221" class="h">Future product direction — separate model-learning loop</text>
+<text x="84" y="1262" class="s">Frontier examples → validated training material → smaller compiler → enterprise post-training</text>
+<text x="84" y="1293" class="s">No required model, training cadence, fixed “70%” promise, or automatic weight updates.</text>
+<rect x="1015" y="1182" width="925" height="161" rx="14" fill="#f8f8fa" stroke="#b9c2ce" stroke-width="2" stroke-dasharray="9 7"/>
+<text x="1039" y="1221" class="h">Research proposals — not adopted components</text>
+<text x="1039" y="1262" class="s">Hindsight-inspired consolidation, evidence-aware staleness and maintained views.</text>
+<text x="1039" y="1293" class="s">Benchmark first; these are not approved implementation requirements.</text>
+<text x="60" y="1387" class="s">Lifecycle: Capture → Compile → Serve → Continuous Learning · Governance &amp; Trust cross-cutting · Context Store is the compiled product</text>
+<text x="60" y="1421" class="s">Relevance ≠ evidence sufficiency ≠ publication ≠ execution authority.  |  Frameworks are illustrative, not eight new canonical object types.</text>
 </svg>

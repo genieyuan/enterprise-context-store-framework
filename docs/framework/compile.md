@@ -1,5 +1,18 @@
 # Compile Stage
 
+> **October 2026 reading update:** see [experience distillation](../experience-distillation.md)
+> and the [refreshed architecture](../reference-architecture.md) for the AI-agent compiler,
+> illustrative knowledge frameworks, and searchable proposed Skills. This document retains
+> its earlier scope; the update is not a runtime release or a silent amendment of accepted ADRs.
+> **Current ownership — [ADR-0016](../adr/0016-compile-publishes-ecg-serve-assembles-packages.md):**
+> Compile publishes atomic ContextClaim and EdgeClaim objects into the versioned Enterprise
+> Context Graph. Serve alone assembles temporary request-scoped ContextPackages and durable
+> ContextDeliveryReceipts. The historical durable-package wording below is superseded;
+> legacy fields map to graph claims, projections, manifests, or Serve receipts. This changes
+> no Phase 1 security-enforcement boundary.
+
+
+
 **Phase 1 / public-channel / security-deferred boundary:** this is a public architecture document. It does not authorize ingestion of private or restricted channels, and security enforcement is deferred to a future phase.
 # Enterprise Context Store — Compile Stage: Gate 1 Final Design
 
